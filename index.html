@@ -1,0 +1,3470 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Verified GIF | Pro</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Vazirmatn:wght@300;400;500;700;800&family=Tanha&family=Shabnam:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+
+--bg1:#090b14;
+--bg2:#101a2c;
+--bg3:#182343;
+
+--glass:rgba(255,255,255,.09);
+--glass2:rgba(255,255,255,.14);
+
+--stroke:rgba(255,255,255,.18);
+
+--text:#ffffff;
+--muted:rgba(255,255,255,.72);
+
+--accent:#ffd700;
+--accent2:#ffbf00;
+
+--success:#22c55e;
+--danger:#ef4444;
+
+--radius:24px;
+
+--shadow:
+0 25px 60px rgba(0,0,0,.45);
+
+--shadowSoft:
+0 10px 30px rgba(0,0,0,.25);
+
+}
+:root[data-theme="cool"]{
+
+--bg1:#020814;
+--bg2:#081b33;
+--bg3:#0f3b66;
+
+--glass:rgba(0,180,255,.10);
+--glass2:rgba(0,200,255,.16);
+
+--stroke:rgba(0,220,255,.28);
+
+--text:#f4fcff;
+--muted:rgba(244,252,255,.72);
+
+--accent:#00d9ff;
+--accent2:#009dff;
+
+--success:#00f5a0;
+--danger:#ff4f7b;
+
+--radius:24px;
+
+--shadow:
+0 25px 60px rgba(0,120,255,.35);
+
+--shadowSoft:
+0 10px 30px rgba(0,120,255,.20);
+
+}
+:root[data-theme="gold"]{
+
+--bg1:#0b0905;
+--bg2:#1a1307;
+--bg3:#2c1f09;
+
+--glass:rgba(255,215,0,.08);
+--glass2:rgba(255,215,0,.15);
+
+--stroke:rgba(255,215,0,.25);
+
+--text:#fffdf7;
+--muted:rgba(255,248,220,.72);
+
+--accent:#ffd700;
+--accent2:#ffb300;
+
+--success:#4ade80;
+--danger:#f87171;
+
+--radius:24px;
+
+--shadow:
+0 25px 60px rgba(255,180,0,.28);
+
+--shadowSoft:
+0 10px 30px rgba(255,180,0,.18);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Vazirmatn,sans-serif;
+
+background:
+
+radial-gradient(circle at 15% 15%,rgba(255,215,0,.18),transparent 22%),
+
+radial-gradient(circle at 85% 12%,rgba(255,255,255,.08),transparent 18%),
+
+radial-gradient(circle at 80% 85%,rgba(34,197,94,.08),transparent 20%),
+
+linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+
+background-attachment:fixed;
+
+min-height:100vh;
+
+color:var(--text);
+
+padding:30px;
+
+overflow-x:hidden;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+linear-gradient(130deg,
+rgba(255,255,255,.05),
+transparent 20%,
+transparent 80%,
+rgba(255,255,255,.04));
+
+opacity:.8;
+
+}
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+max-width:950px;
+
+margin:auto;
+
+padding:30px;
+
+border-radius:32px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.07));
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:var(--shadow);
+
+overflow:hidden;
+
+}
+
+.container::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,255,255,.15),
+transparent 35%,
+transparent 70%,
+rgba(255,255,255,.05));
+
+}
+
+header{
+
+position:relative;
+
+z-index:2;
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:44px;
+
+font-weight:800;
+
+letter-spacing:-1px;
+
+margin-bottom:8px;
+
+}
+
+.subtitle{
+
+color:var(--muted);
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.section{
+
+position:relative;
+
+z-index:2;
+
+margin-top:22px;
+
+padding:22px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+label{
+
+display:block;
+
+font-weight:700;
+
+margin-bottom:12px;
+
+}
+
+.upload-area{
+
+position:relative;
+
+z-index:2;
+
+border:2px dashed rgba(255,255,255,.25);
+
+border-radius:28px;
+
+padding:45px;
+
+cursor:pointer;
+
+transition:.3s;
+
+background:rgba(255,255,255,.05);
+
+overflow:hidden;
+
+}
+
+.upload-area:hover{
+
+border-color:var(--accent);
+
+background:rgba(255,255,255,.08);
+
+transform:translateY(-2px);
+
+}
+
+.upload-area.drag{
+
+border-color:#22c55e;
+
+background:rgba(34,197,94,.10);
+
+}
+
+.upload-content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+gap:10px;
+
+}
+
+.upload-icon{
+
+font-size:70px;
+
+filter:drop-shadow(0 8px 20px rgba(255,215,0,.25));
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+#browseBtn{
+
+margin-top:12px;
+
+padding:13px 26px;
+
+border:none;
+
+border-radius:15px;
+
+background:
+
+linear-gradient(135deg,var(--accent),var(--accent2));
+
+font-weight:700;
+
+cursor:pointer;
+
+color:#111;
+
+transition:.25s;
+
+}
+
+#browseBtn:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 15px 35px rgba(255,215,0,.30);
+
+}
+
+video{
+
+width:100%;
+
+border-radius:18px;
+
+background:black;
+
+border:1px solid rgba(255,255,255,.14);
+
+box-shadow:var(--shadowSoft);
+
+display:block;
+
+}
+
+textarea{
+
+width:100%;
+
+min-height:130px;
+
+resize:vertical;
+
+padding:16px;
+
+font-size:16px;
+
+font-family:inherit;
+
+color:white;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.16);
+
+border-radius:18px;
+
+outline:none;
+
+transition:.25s;
+
+}
+
+textarea:focus{
+
+border-color:var(--accent);
+
+box-shadow:
+
+0 0 0 4px rgba(255,215,0,.12);
+
+}
+
+.counter{
+
+margin-top:8px;
+
+text-align:left;
+
+color:var(--muted);
+
+font-size:13px;
+
+}
+
+select,
+
+input[type=color]{
+
+width:100%;
+
+padding:14px;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.16);
+
+color:white;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+input[type=range]{
+
+width:100%;
+
+cursor:pointer;
+
+margin-top:8px;
+
+}
+
+.sliderValue{
+
+margin-top:8px;
+
+font-weight:700;
+
+color:var(--accent);
+
+}
+
+.btn-group{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-group button{
+
+flex:1;
+
+padding:13px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,.18);
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.25s;
+
+}
+
+.btn-group button:hover{
+
+background:rgba(255,255,255,.15);
+
+transform:translateY(-2px);
+
+}
+
+.btn-group button.active{
+
+background:rgba(255,215,0,.18);
+
+border-color:rgba(255,215,0,.5);
+
+box-shadow:
+
+0 0 15px rgba(255,215,0,.18);
+
+}
+.switches{
+
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+
+}
+
+.switch{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
+user-select:none;
+
+}
+
+.switch input{
+
+display:none;
+
+}
+
+.switch span{
+
+position:relative;
+
+width:52px;
+height:28px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.18);
+
+transition:.3s;
+
+}
+
+.switch span::before{
+
+content:"";
+
+position:absolute;
+
+width:22px;
+height:22px;
+
+left:3px;
+top:3px;
+
+border-radius:50%;
+
+background:white;
+
+transition:.3s;
+
+}
+
+.switch input:checked+span{
+
+background:linear-gradient(
+135deg,
+var(--accent),
+var(--accent2));
+
+}
+
+.switch input:checked+span::before{
+
+transform:translateX(24px);
+
+}
+
+.generate-btn{
+
+width:100%;
+
+padding:17px;
+
+border:none;
+
+border-radius:18px;
+
+cursor:pointer;
+
+font-size:19px;
+
+font-weight:800;
+
+color:#111;
+
+background:linear-gradient(
+135deg,
+var(--accent),
+var(--accent2));
+
+transition:.3s;
+
+box-shadow:
+0 15px 35px rgba(255,215,0,.28);
+
+animation:pulse 2s infinite;
+
+}
+
+.generate-btn:hover{
+
+transform:translateY(-3px) scale(1.02);
+
+box-shadow:
+0 20px 45px rgba(255,215,0,.35);
+
+}
+
+.generate-btn:disabled{
+
+opacity:.5;
+
+cursor:not-allowed;
+
+animation:none;
+
+transform:none;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:
+0 0 0 0 rgba(255,215,0,.35);
+
+}
+
+70%{
+
+box-shadow:
+0 0 0 18px rgba(255,215,0,0);
+
+}
+
+100%{
+
+box-shadow:
+0 0 0 0 rgba(255,215,0,0);
+
+}
+
+}
+
+.progressHeader{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:12px;
+
+font-weight:700;
+
+}
+
+.progressBar{
+
+height:14px;
+
+background:rgba(255,255,255,.12);
+
+border-radius:100px;
+
+overflow:hidden;
+
+}
+
+#progressFill{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+var(--accent),
+var(--accent2));
+
+transition:width .25s;
+
+border-radius:100px;
+
+}
+
+.downloadCard{
+
+margin-top:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.downloadTitle{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:6px;
+
+color:var(--success);
+
+}
+
+#videoInfo{
+
+font-size:14px;
+
+color:var(--muted);
+
+line-height:1.7;
+
+}
+
+#downloadBtn{
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+font-weight:700;
+
+font-size:15px;
+
+color:white;
+
+background:linear-gradient(
+135deg,
+#16a34a,
+#22c55e);
+
+transition:.25s;
+
+}
+
+#downloadBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 15px 30px rgba(34,197,94,.28);
+
+}
+
+#toast{
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%) translateY(-80px);
+
+padding:14px 24px;
+
+border-radius:15px;
+
+background:rgba(20,20,20,.92);
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+font-weight:700;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.35s;
+
+z-index:9999;
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+#toast.show{
+
+opacity:1;
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+footer{
+
+margin-top:30px;
+
+text-align:center;
+
+color:var(--muted);
+
+font-size:15px;
+
+}
+
+footer a{
+
+position:relative;
+
+text-decoration:none;
+
+color:white;
+
+padding-bottom:3px;
+
+}
+
+footer a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:0;
+
+width:0;
+
+height:2px;
+
+background:var(--accent);
+
+transition:.3s;
+
+}
+
+footer a:hover::after{
+
+width:100%;
+
+}
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0d1324;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:rgba(255,255,255,.18);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:rgba(255,255,255,.30);
+
+}
+
+::selection{
+
+background:rgba(255,215,0,.35);
+
+color:white;
+
+}
+
+@media(max-width:900px){
+
+.container{
+
+padding:22px;
+
+}
+
+.downloadCard{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+}
+
+@media(max-width:700px){
+
+body{
+
+padding:15px;
+
+}
+
+.container{
+
+padding:18px;
+
+border-radius:22px;
+
+}
+
+.upload-area{
+
+padding:30px;
+
+}
+
+.upload-icon{
+
+font-size:56px;
+
+}
+
+.btn-group{
+
+flex-direction:column;
+
+}
+
+.btn-group button{
+
+width:100%;
+
+}
+
+.switches{
+
+flex-direction:column;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.generate-btn{
+
+font-size:17px;
+
+}
+
+#downloadBtn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:450px){
+
+.section{
+
+padding:16px;
+
+}
+
+textarea{
+
+min-height:110px;
+
+}
+
+.upload-content h2{
+
+font-size:20px;
+
+}
+
+.subtitle{
+
+font-size:14px;
+
+}
+
+footer{
+
+font-size:13px;
+
+}
+
+}
+.top-bar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+}
+
+.logo{
+
+    margin:0;
+
+    font-size:34px;
+
+}
+
+#themeBtn{
+
+    padding:8px 18px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    border-radius:12px;
+
+    border:1px solid var(--stroke);
+
+    background:var(--glass);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    backdrop-filter:blur(12px);
+
+}
+
+#themeBtn:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(255,255,255,.15);
+
+   }
+</style>
+</head>
+
+<body>
+
+<div id="toast"></div>
+
+<div class="container">
+<div class="top-bar">
+
+    <h1 class="logo">
+        Verified GIF Pro
+    </h1>
+
+    <button id="themeBtn">
+        Theme
+    </button>
+
+</div>
+<header>
+
+<h1 style="font-family:'Dancing Script', cursive;">
+    Verified GIF Pro
+</h1>
+
+<p class="subtitle">
+ویدیو آپلود کن، متن اضافه کن و خروجی WebM بگیر.
+</p>
+
+</header>
+
+<div class="upload-area" id="dropArea">
+
+<input
+type="file"
+id="videoInput"
+accept="video/*"
+hidden>
+
+<div class="upload-content">
+
+<div class="upload-icon">
+📹
+</div>
+
+<h2>ویدیو را اینجا رها کن</h2>
+
+<p>
+یا برای انتخاب فایل کلیک کن
+</p>
+
+<button
+type="button"
+id="browseBtn">
+
+انتخاب ویدیو
+
+</button>
+
+</div>
+
+</div>
+
+<div id="previewSection" class="section">
+
+<h3>پیش نمایش</h3>
+
+<video
+id="previewVideo"
+controls
+playsinline>
+
+</video>
+
+</div>
+
+<div class="section">
+
+<label>
+
+متن روی ویدیو
+
+</label>
+
+<textarea
+id="mainText"
+maxlength="200"
+placeholder="متن دلخواه خود را بنویس..."></textarea>
+
+<div class="counter">
+
+<span id="charCount">
+0
+</span>
+
+/200
+
+</div>
+
+</div>
+
+<div class="section">
+
+<label>
+
+فونت
+
+</label>
+
+<select id="fontSelect">
+
+<option value="Vazirmatn">
+Vazirmatn
+</option>
+
+<option value="Ubuntu">
+Ubuntu
+</option>
+
+<option value="Arial">
+Arial
+</option>
+
+<option value="Tahoma">
+Tahoma
+</option>
+
+<option value="Shabnam">
+Shabnam
+</option>
+
+<option value="Tanha">
+Tanha
+</option>
+
+</select>
+
+</div>
+
+<div class="section">
+
+<label>
+
+اندازه متن
+
+</label>
+
+<input
+type="range"
+min="20"
+max="100"
+value="48"
+id="fontSize">
+
+<div class="sliderValue">
+
+<span id="fontSizeValue">
+
+48
+
+</span>
+
+px
+
+</div>
+
+</div>
+
+<div class="section">
+
+<label>
+
+رنگ متن
+
+</label>
+
+<input
+type="color"
+id="textColor"
+value="#ffffff">
+
+</div>
+
+<div class="section">
+
+<label>
+
+رنگ حاشیه متن
+
+</label>
+
+<input
+type="color"
+id="strokeColor"
+value="#000000">
+
+</div>
+
+<div class="section">
+
+<label>
+
+موقعیت متن
+
+</label>
+
+<div
+class="btn-group"
+id="posGroup">
+
+<button
+class="active"
+type="button"
+data-pos="top">
+
+بالا
+
+</button>
+
+<button
+type="button"
+data-pos="center">
+
+وسط
+
+</button>
+
+<button
+type="button"
+data-pos="bottom">
+
+پایین
+
+</button>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<label>
+
+تنظیمات
+
+</label>
+
+<div class="switches">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="wideMode">
+
+<span></span>
+
+ویدیو عریض
+
+</label>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="shadowToggle"
+checked>
+
+<span></span>
+
+سایه متن
+
+</label>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<button
+id="generateBtn"
+class="generate-btn"
+disabled>
+
+ساخت ویدیو
+
+</button>
+
+</div>
+
+<div
+id="progressSection"
+class="section">
+
+<div class="progressHeader">
+
+<span>
+
+در حال پردازش...
+
+</span>
+
+<span id="percent">
+
+0%
+
+</span>
+
+</div>
+
+<div class="progressBar">
+
+<div
+id="progressFill">
+
+</div>
+
+</div>
+
+</div>
+
+<div
+id="output"
+class="section">
+
+<h3>
+
+خروجی
+
+</h3>
+
+<video
+id="outputVideo"
+controls
+playsinline>
+
+</video>
+
+<div class="downloadCard">
+
+<div>
+
+<div class="downloadTitle">
+
+✔ آماده دانلود
+
+</div>
+
+<div
+id="videoInfo">
+
+...
+
+</div>
+
+</div>
+
+<button
+id="downloadBtn">
+
+دانلود WebM
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+©
+
+<a
+href="https://rubika.ir/TAXI_lac">
+
+TAXI_LAC
+
+</a>
+
+&
+
+<a
+href="https://rubika.ir/VHOLYHerculeEdit">
+
+Hercule
+
+</a>
+
+</footer>
+
+</div>
+<script>
+/* ===========================================================
+   Verified GIF Pro
+   script.js - FINAL REWRITE
+   Part 1/5
+=========================================================== */
+
+"use strict";
+
+/* =========================
+   DOM ELEMENTS
+========================= */
+
+const videoInput = document.getElementById("videoInput");
+const browseBtn = document.getElementById("browseBtn");
+const dropArea = document.getElementById("dropArea");
+
+const previewVideo = document.getElementById("previewVideo");
+
+const mainText = document.getElementById("mainText");
+const charCount = document.getElementById("charCount");
+
+const fontSelect = document.getElementById("fontSelect");
+const fontSize = document.getElementById("fontSize");
+const fontSizeValue = document.getElementById("fontSizeValue");
+
+const textColor = document.getElementById("textColor");
+const strokeColor = document.getElementById("strokeColor");
+
+const shadowToggle = document.getElementById("shadowToggle");
+const wideMode = document.getElementById("wideMode");
+
+const generateBtn = document.getElementById("generateBtn");
+
+const progressSection = document.getElementById("progressSection");
+const progressFill = document.getElementById("progressFill");
+const percent = document.getElementById("percent");
+
+const output = document.getElementById("output");
+const outputVideo = document.getElementById("outputVideo");
+
+const downloadBtn = document.getElementById("downloadBtn");
+const videoInfo = document.getElementById("videoInfo");
+
+const toast = document.getElementById("toast");
+
+
+/* =========================
+   GLOBAL STATE
+========================= */
+
+let currentPosition = "top";
+
+let selectedFile = null;
+
+let outputBlob = null;
+
+let processing = false;
+
+let sourceVideo = null;
+
+let canvas = null;
+
+let ctx = null;
+
+let stream = null;
+
+let recorder = null;
+
+let chunks = [];
+
+let animationId = null;
+
+let startTime = 0;
+
+let videoDuration = 0;
+
+let fps = 30;
+
+
+/* =========================
+   TOAST SYSTEM
+========================= */
+
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(showToast.timer);
+
+    showToast.timer = setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2500);
+
+}
+
+
+/* =========================
+   SETTINGS STORAGE
+========================= */
+
+function saveSettings(){
+
+    const data = {
+
+        position: currentPosition,
+
+        font: fontSelect.value,
+
+        size: fontSize.value,
+
+        textColor: textColor.value,
+
+        strokeColor: strokeColor.value,
+
+        shadow: shadowToggle.checked,
+
+        wide: wideMode.checked,
+
+        text: mainText.value
+
+    };
+
+    localStorage.setItem(
+
+        "verifiedGIF_settings",
+
+        JSON.stringify(data)
+
+    );
+
+}
+
+
+function loadSettings(){
+
+    const saved =
+
+    localStorage.getItem(
+
+        "verifiedGIF_settings"
+
+    );
+
+
+    if(!saved)
+        return;
+
+
+    try{
+
+        const data = JSON.parse(saved);
+
+
+        if(data.position){
+
+            currentPosition = data.position;
+
+            document
+            .querySelectorAll("#posGroup button")
+            .forEach(btn=>{
+
+                btn.classList.toggle(
+
+                    "active",
+
+                    btn.dataset.pos === currentPosition
+
+                );
+
+            });
+
+        }
+
+
+        if(data.font)
+
+            fontSelect.value = data.font;
+
+
+        if(data.size){
+
+            fontSize.value = data.size;
+
+            fontSizeValue.textContent = data.size;
+
+        }
+
+
+        if(data.textColor)
+
+            textColor.value = data.textColor;
+
+
+        if(data.strokeColor)
+
+            strokeColor.value = data.strokeColor;
+
+
+        shadowToggle.checked = !!data.shadow;
+
+        wideMode.checked = !!data.wide;
+
+
+        if(data.text){
+
+            mainText.value = data.text;
+
+            charCount.textContent = data.text.length;
+
+        }
+
+
+    }catch(e){
+
+        console.warn(
+            "Settings load failed",
+            e
+        );
+
+    }
+
+}
+
+
+/* =========================
+   INPUT EVENTS
+========================= */
+
+
+mainText.addEventListener("input",()=>{
+
+    charCount.textContent =
+    mainText.value.length;
+
+    saveSettings();
+
+});
+
+
+fontSize.addEventListener("input",()=>{
+
+    fontSizeValue.textContent =
+    fontSize.value;
+
+    saveSettings();
+
+});
+
+
+[
+    fontSelect,
+    textColor,
+    strokeColor,
+    shadowToggle,
+    wideMode
+].forEach(control=>{
+
+    control.addEventListener(
+        "change",
+        saveSettings
+    );
+
+});
+
+
+/* =========================
+   POSITION BUTTONS
+========================= */
+
+
+document
+.querySelectorAll("#posGroup button")
+.forEach(button=>{
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+            document
+            .querySelectorAll("#posGroup button")
+            .forEach(btn=>
+                btn.classList.remove("active")
+            );
+
+
+            button.classList.add("active");
+
+
+            currentPosition =
+            button.dataset.pos;
+
+
+            saveSettings();
+
+        }
+    );
+
+});
+
+
+/* =========================
+   FILE PICKER
+========================= */
+
+
+browseBtn.addEventListener(
+    "click",
+    ()=>{
+
+        videoInput.click();
+
+    }
+);
+
+
+videoInput.addEventListener(
+    "change",
+    ()=>{
+
+        if(videoInput.files.length){
+
+            selectedFile =
+            videoInput.files[0];
+
+            loadPreview(
+                selectedFile
+            );
+
+        }
+
+    }
+);
+
+
+function loadPreview(file){
+
+    const url =
+    URL.createObjectURL(file);
+
+
+    previewVideo.src = url;
+
+    previewVideo.load();
+
+
+    generateBtn.disabled = false;
+
+
+    showToast(
+        "ویدیو آماده شد"
+    );
+
+}
+
+
+/* =========================
+   DRAG AND DROP
+========================= */
+
+
+["dragenter","dragover"]
+.forEach(event=>{
+
+    dropArea.addEventListener(
+        event,
+        e=>{
+
+            e.preventDefault();
+
+            dropArea.classList.add(
+                "drag"
+            );
+
+        }
+    );
+
+});
+
+
+["dragleave","drop"]
+.forEach(event=>{
+
+    dropArea.addEventListener(
+        event,
+        e=>{
+
+            e.preventDefault();
+
+            dropArea.classList.remove(
+                "drag"
+            );
+
+        }
+    );
+
+});
+
+
+dropArea.addEventListener(
+    "drop",
+    e=>{
+
+        const files =
+        e.dataTransfer.files;
+
+
+        if(!files.length)
+            return;
+
+
+        selectedFile = files[0];
+
+        loadPreview(
+            selectedFile
+        );
+
+    }
+);
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+progressSection.style.display="none";
+
+output.style.display="none";
+
+downloadBtn.disabled=true;
+
+
+loadSettings();
+
+
+console.log(
+    "Verified GIF Pro initialized"
+);
+/* ===========================================================
+   Verified GIF Pro
+   script.js - FINAL REWRITE
+   Part 2/5
+=========================================================== */
+
+
+/* =========================
+   VIDEO PREPARATION
+========================= */
+
+function createRenderVideo(file){
+
+    return new Promise((resolve,reject)=>{
+
+        const video = document.createElement("video");
+
+        video.src =
+        URL.createObjectURL(file);
+
+        video.muted = true;
+
+        video.playsInline = true;
+
+        video.preload = "auto";
+
+
+        video.onloadedmetadata = ()=>{
+
+            videoDuration =
+            video.duration;
+
+            resolve(video);
+
+        };
+
+
+        video.onerror = ()=>{
+
+            reject(
+                new Error(
+                    "Video loading failed"
+                )
+            );
+
+        };
+
+
+    });
+
+}
+
+
+
+/* =========================
+   CANVAS SETUP
+========================= */
+
+function setupCanvas(video){
+
+    canvas =
+    document.createElement("canvas");
+
+
+    let width =
+    video.videoWidth;
+
+
+    let height =
+    video.videoHeight;
+
+
+    if(wideMode.checked){
+
+        width =
+        Math.max(
+
+            width,
+
+            Math.floor(
+                height * 16 / 9
+            )
+
+        );
+
+    }
+
+
+    canvas.width = width;
+
+    canvas.height = height;
+
+
+    ctx =
+    canvas.getContext(
+        "2d",
+        {
+            alpha:false
+        }
+    );
+
+
+}
+
+
+
+/* =========================
+   START PROCESSING
+========================= */
+
+
+generateBtn.addEventListener(
+    "click",
+    startProcessing
+);
+
+
+
+async function startProcessing(){
+
+    if(processing)
+        return;
+
+
+    if(!selectedFile){
+
+        showToast(
+            "یک ویدیو انتخاب کنید"
+        );
+
+        return;
+
+    }
+
+
+    processing = true;
+
+
+    generateBtn.disabled = true;
+
+
+    progressSection.style.display =
+    "block";
+
+
+    output.style.display =
+    "none";
+
+
+    percent.textContent =
+    "0%";
+
+
+    progressFill.style.width =
+    "0%";
+
+
+    chunks = [];
+
+
+    try{
+
+
+        sourceVideo =
+        await createRenderVideo(
+            selectedFile
+        );
+
+
+        setupCanvas(
+            sourceVideo
+        );
+
+
+        await sourceVideo.play();
+
+
+        startRecording();
+
+
+    }
+
+
+    catch(error){
+
+
+        console.error(error);
+
+
+        showToast(
+            "خطا در شروع پردازش"
+        );
+
+
+        finishCleanup();
+
+
+    }
+
+
+}
+
+
+
+/* =========================
+   MEDIA RECORDER SETUP
+========================= */
+
+
+function startRecording(){
+
+
+    stream =
+    canvas.captureStream(
+        fps
+    );
+
+
+    let options = {
+
+        videoBitsPerSecond:
+        4000000
+
+    };
+
+
+    if(
+        MediaRecorder
+        .isTypeSupported(
+        "video/webm;codecs=vp9"
+        )
+    ){
+
+        options.mimeType =
+        "video/webm;codecs=vp9";
+
+    }
+
+    else if(
+        MediaRecorder
+        .isTypeSupported(
+        "video/webm;codecs=vp8"
+        )
+    ){
+
+        options.mimeType =
+        "video/webm;codecs=vp8";
+
+    }
+
+
+
+    recorder =
+    new MediaRecorder(
+        stream,
+        options
+    );
+
+
+
+    recorder.ondataavailable =
+    event=>{
+
+
+        if(
+            event.data &&
+            event.data.size > 0
+        ){
+
+            chunks.push(
+                event.data
+            );
+
+        }
+
+
+    };
+
+
+
+    recorder.onstop =
+    createOutput;
+
+
+
+    recorder.start(
+        100
+    );
+
+
+
+    startTime =
+    performance.now();
+
+
+
+    renderVideo();
+
+}
+
+
+
+/* =========================
+   VIDEO FRAME LOOP
+========================= */
+
+
+function renderVideo(){
+
+
+    if(
+        !sourceVideo ||
+        sourceVideo.ended
+    ){
+
+        stopRecording();
+
+        return;
+
+    }
+
+
+
+    drawFrame();
+
+
+
+    updateProgress();
+
+
+
+    if(
+        sourceVideo.requestVideoFrameCallback
+    ){
+
+        sourceVideo
+        .requestVideoFrameCallback(
+            renderVideo
+        );
+
+    }
+
+    else{
+
+        animationId =
+        requestAnimationFrame(
+            renderVideo
+        );
+
+    }
+
+
+}
+
+
+
+/* =========================
+   DRAW CURRENT FRAME
+========================= */
+
+
+function drawFrame(){
+
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        canvas.width,
+
+        canvas.height
+
+    );
+
+
+
+    if(wideMode.checked){
+
+
+        const scale =
+        Math.max(
+
+            canvas.width /
+            sourceVideo.videoWidth,
+
+
+            canvas.height /
+            sourceVideo.videoHeight
+
+        );
+
+
+        const w =
+        sourceVideo.videoWidth *
+        scale;
+
+
+        const h =
+        sourceVideo.videoHeight *
+        scale;
+
+
+        const x =
+        (canvas.width-w)/2;
+
+
+        const y =
+        (canvas.height-h)/2;
+
+
+
+        ctx.drawImage(
+
+            sourceVideo,
+
+            x,
+
+            y,
+
+            w,
+
+            h
+
+        );
+
+
+    }
+
+    else{
+
+
+        ctx.drawImage(
+
+            sourceVideo,
+
+            0,
+
+            0,
+
+            canvas.width,
+
+            canvas.height
+
+        );
+
+
+    }
+
+
+
+}
+/* ===========================================================
+   Verified GIF Pro
+   script.js - FINAL REWRITE
+   Part 3/5
+=========================================================== */
+
+
+/* =========================
+   TEXT DRAWING
+========================= */
+
+function drawText(){
+
+
+    const text =
+    mainText.value.trim();
+
+
+    if(!text)
+        return;
+
+
+
+    const lines =
+    text.split("\n");
+
+
+
+    const size =
+    Number(fontSize.value);
+
+
+
+    ctx.save();
+
+
+
+    ctx.font =
+    "700 "
+    + size +
+    "px "
+    + fontSelect.value;
+
+
+
+    ctx.textAlign =
+    "center";
+
+
+
+    ctx.textBaseline =
+    "middle";
+
+
+
+    ctx.fillStyle =
+    textColor.value;
+
+
+
+    ctx.strokeStyle =
+    strokeColor.value;
+
+
+
+    ctx.lineWidth =
+    Math.max(
+        4,
+        size / 8
+    );
+
+
+
+    if(shadowToggle.checked){
+
+        ctx.shadowBlur =
+        12;
+
+        ctx.shadowColor =
+        "rgba(0,0,0,0.8)";
+
+    }
+
+
+
+    let y;
+
+
+
+    if(currentPosition==="top"){
+
+        y =
+        canvas.height * 0.15;
+
+    }
+
+    else if(currentPosition==="center"){
+
+        y =
+        canvas.height * 0.5;
+
+    }
+
+    else{
+
+        y =
+        canvas.height * 0.85;
+
+    }
+
+
+
+    const gap =
+    size * 1.25;
+
+
+
+    const start =
+    y -
+    ((lines.length-1)*gap)/2;
+
+
+
+    lines.forEach((line,index)=>{
+
+
+        const lineY =
+        start +
+        index*gap;
+
+
+
+        ctx.strokeText(
+
+            line,
+
+            canvas.width/2,
+
+            lineY
+
+        );
+
+
+
+        ctx.fillText(
+
+            line,
+
+            canvas.width/2,
+
+            lineY
+
+        );
+
+
+    });
+
+
+
+    ctx.restore();
+
+
+}
+
+
+/* =========================
+   WATERMARK
+========================= */
+function drawWatermark(){
+
+    ctx.save();
+
+    ctx.globalAlpha = 0.4;
+
+    ctx.translate(
+        25,
+        canvas.height / 2
+    );
+
+    ctx.rotate(
+        -Math.PI / 2
+    );
+
+    ctx.font =
+    "700 24px Arial";
+
+    ctx.textAlign =
+    "center";
+
+    ctx.fillStyle =
+    "#ffffff";
+
+    ctx.strokeStyle =
+    "rgba(0,0,0,0.8)";
+
+    ctx.lineWidth = 4;
+
+
+    ctx.strokeText(
+        "@verified_GIF",
+        0,
+        0
+    );
+
+
+    ctx.fillText(
+        "@verified_GIF",
+        0,
+        0
+    );
+
+
+    ctx.restore();
+
+}
+/* =========================
+   UPDATE FRAME
+========================= */
+
+function drawFrame(){
+
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        canvas.width,
+
+        canvas.height
+
+    );
+
+
+
+    if(wideMode.checked){
+
+
+        const scale =
+        Math.max(
+
+            canvas.width /
+            sourceVideo.videoWidth,
+
+
+            canvas.height /
+            sourceVideo.videoHeight
+
+        );
+
+
+
+        const width =
+        sourceVideo.videoWidth *
+        scale;
+
+
+
+        const height =
+        sourceVideo.videoHeight *
+        scale;
+
+
+
+        const x =
+        (canvas.width-width)/2;
+
+
+
+        const y =
+        (canvas.height-height)/2;
+
+
+
+        ctx.drawImage(
+
+            sourceVideo,
+
+            x,
+
+            y,
+
+            width,
+
+            height
+
+        );
+
+
+    }
+
+    else{
+
+
+        ctx.drawImage(
+
+            sourceVideo,
+
+            0,
+
+            0,
+
+            canvas.width,
+
+            canvas.height
+
+        );
+
+
+    }
+
+
+
+    drawText();
+
+
+
+    drawWatermark();
+
+
+}
+
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+function updateProgress(){
+
+
+    if(
+        !sourceVideo ||
+        !sourceVideo.duration
+    )
+        return;
+
+
+
+    const value =
+
+    (
+
+        sourceVideo.currentTime /
+
+        sourceVideo.duration
+
+    ) * 100;
+
+
+
+    const fixed =
+
+    Math.min(
+
+        100,
+
+        Math.floor(value)
+
+    );
+
+
+
+    progressFill.style.width =
+
+    fixed + "%";
+
+
+
+    percent.textContent =
+
+    fixed + "%";
+
+
+}
+
+
+
+/* =========================
+   STOP RECORDING
+========================= */
+
+function stopRecording(){
+
+
+    if(animationId){
+
+        cancelAnimationFrame(
+            animationId
+        );
+
+        animationId=null;
+
+    }
+
+
+
+    if(
+        recorder &&
+        recorder.state !== "inactive"
+    ){
+
+        recorder.stop();
+
+    }
+
+
+
+    if(stream){
+
+        stream
+        .getTracks()
+        .forEach(track=>{
+
+            track.stop();
+
+        });
+
+    }
+
+
+
+}
+
+
+/* =========================
+   SAFETY STOP
+========================= */
+
+setInterval(()=>{
+
+
+    if(
+        processing &&
+        sourceVideo &&
+        sourceVideo.ended
+    ){
+
+        stopRecording();
+
+    }
+
+
+},500);
+/* ===========================================================
+   Verified GIF Pro
+   script.js - FINAL REWRITE
+   Part 4/5
+=========================================================== */
+
+
+/* =========================
+   FINISH RECORDING
+========================= */
+
+function createOutput(){
+
+
+    outputBlob = new Blob(
+
+        chunks,
+
+        {
+            type:"video/webm"
+        }
+
+    );
+
+
+
+    const url =
+
+    URL.createObjectURL(
+        outputBlob
+    );
+
+
+
+    outputVideo.src = url;
+
+
+
+    output.style.display =
+    "block";
+
+
+
+    downloadBtn.disabled =
+    false;
+
+
+
+    videoInfo.innerHTML =
+
+    "📺 رزولوشن: "
+
+    +
+
+    canvas.width
+
+    +
+
+    " × "
+
+    +
+
+    canvas.height
+
+    +
+
+    "<br>"
+
+    +
+
+    "⏱ مدت: "
+
+    +
+
+    sourceVideo.duration
+    .toFixed(2)
+
+    +
+
+    " ثانیه"
+
+    +
+
+    "<br>"
+
+    +
+
+    "📦 حجم: "
+
+    +
+
+    formatBytes(
+        outputBlob.size
+    );
+
+
+
+    finishCleanup();
+
+
+
+    showToast(
+        "گیف آماده شد!"
+    );
+
+
+}
+
+
+
+/* =========================
+   CLEANUP
+========================= */
+
+function finishCleanup(){
+
+
+    processing=false;
+
+
+
+    generateBtn.disabled =
+    false;
+
+
+
+    progressSection.style.display =
+    "none";
+
+
+
+    if(sourceVideo){
+
+        sourceVideo.pause();
+
+    }
+
+
+
+}
+
+
+
+/* =========================
+   FILE SIZE FORMAT
+========================= */
+
+function formatBytes(bytes){
+
+
+    if(bytes < 1024)
+
+        return bytes+" B";
+
+
+
+    if(bytes < 1024*1024)
+
+        return (
+
+            bytes/1024
+
+        ).toFixed(1)+" KB";
+
+
+
+    return (
+
+        bytes/1024/1024
+
+    ).toFixed(2)+" MB";
+
+
+}
+
+
+
+/* =========================
+   DOWNLOAD
+========================= */
+
+downloadBtn.addEventListener(
+
+    "click",
+
+    ()=>{
+
+
+        if(!outputBlob){
+
+            showToast(
+                "فایلی وجود ندارد"
+            );
+
+            return;
+
+        }
+
+
+
+        const url =
+
+        URL.createObjectURL(
+            outputBlob
+        );
+
+
+
+        const link =
+
+        document.createElement(
+            "a"
+        );
+
+
+
+        link.href=url;
+
+
+
+        link.download =
+        "VerifiedGIF.webm";
+
+
+
+        document.body.appendChild(
+            link
+        );
+
+
+
+        link.click();
+
+
+
+        link.remove();
+
+
+
+        setTimeout(()=>{
+
+            URL.revokeObjectURL(
+                url
+            );
+
+        },1000);
+
+
+
+    }
+
+);
+
+
+
+/* =========================
+   CANCEL SUPPORT
+========================= */
+
+window.addEventListener(
+
+"keydown",
+
+event=>{
+
+
+    if(
+        event.key==="Escape" &&
+        processing
+    ){
+
+        stopRecording();
+
+
+
+        finishCleanup();
+
+
+
+        showToast(
+            "پردازش لغو شد"
+        );
+
+
+    }
+
+
+}
+
+);
+
+
+
+/* =========================
+   PAGE CLEANUP
+========================= */
+
+window.addEventListener(
+
+"beforeunload",
+
+()=>{
+
+
+    try{
+
+        stopRecording();
+
+    }
+
+    catch(e){}
+
+
+
+    if(outputBlob){
+
+        URL.revokeObjectURL(
+
+            URL.createObjectURL(
+                outputBlob
+            )
+
+        );
+
+    }
+
+
+});
+
+
+/* =========================
+   READY
+========================= */
+
+console.log(
+    "Verified GIF Pro - Part 4 loaded"
+);
+/* ===========================================================
+   Verified GIF Pro
+   script.js - FINAL REWRITE
+   Part 5/5
+=========================================================== */
+
+
+/* =========================
+   BROWSER COMPATIBILITY
+========================= */
+
+function checkSupport(){
+
+    if(!window.MediaRecorder){
+
+        showToast(
+            "مرورگر شما از ساخت ویدیو پشتیبانی نمی‌کند"
+        );
+
+        generateBtn.disabled=true;
+
+        return false;
+
+    }
+
+
+    if(!HTMLCanvasElement.prototype.captureStream){
+
+        showToast(
+            "Canvas recording پشتیبانی نمی‌شود"
+        );
+
+        generateBtn.disabled=true;
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+
+/* =========================
+   VIDEO METADATA
+========================= */
+
+previewVideo.addEventListener(
+
+"loadedmetadata",
+
+()=>{
+
+
+    const width =
+    previewVideo.videoWidth;
+
+
+    const height =
+    previewVideo.videoHeight;
+
+
+
+    videoInfo.innerHTML =
+
+    "رزولوشن ورودی: "
+
+    +
+
+    width
+
+    +
+
+    " × "
+
+    +
+
+    height;
+
+
+
+}
+
+);
+
+
+
+/* =========================
+   AUTO RESET OUTPUT
+========================= */
+
+function clearOutput(){
+
+
+    outputBlob=null;
+
+
+    outputVideo.removeAttribute(
+        "src"
+    );
+
+
+    outputVideo.load();
+
+
+    output.style.display =
+    "none";
+
+
+    downloadBtn.disabled =
+    true;
+
+
+}
+
+
+
+/* =========================
+   NEW VIDEO RESET
+========================= */
+
+videoInput.addEventListener(
+
+"change",
+
+()=>{
+
+    clearOutput();
+
+}
+
+);
+
+
+
+/* =========================
+   PREVENT DOUBLE START
+========================= */
+
+generateBtn.addEventListener(
+
+"click",
+
+()=>{
+
+
+    if(processing){
+
+        showToast(
+            "در حال پردازش..."
+        );
+
+    }
+
+
+}
+
+);
+
+
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+document.addEventListener(
+
+"visibilitychange",
+
+()=>{
+
+
+    if(
+        document.hidden &&
+        processing
+    ){
+
+        console.log(
+            "Processing continues"
+        );
+
+    }
+
+
+}
+
+);
+
+
+
+/* =========================
+   FINAL INIT
+========================= */
+
+if(checkSupport()){
+
+    console.log(
+        "All systems ready"
+    );
+
+}
+
+
+
+showToast(
+    "Verified GIF Pro آماده است"
+);
+
+
+/* ===========================================================
+   END OF FINAL SCRIPT
+=========================================================== */
+const themeBtn = document.getElementById("themeBtn");
+
+const themes = ["", "cool", "gold"];
+let currentTheme = 0;
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme){
+    currentTheme = Math.max(0, themes.indexOf(savedTheme));
+}
+
+applyTheme();
+
+themeBtn.onclick = () => {
+
+    currentTheme++;
+
+    if(currentTheme >= themes.length){
+        currentTheme = 0;
+    }
+
+    applyTheme();
+
+};
+
+function applyTheme(){
+
+    const theme = themes[currentTheme];
+
+    if(theme === ""){
+
+        document.documentElement.removeAttribute("data-theme");
+        themeBtn.textContent = "Theme";
+
+    }else{
+
+        document.documentElement.setAttribute("data-theme", theme);
+
+        if(theme === "cool"){
+            themeBtn.textContent = "Cool";
+        }
+
+        if(theme === "gold"){
+            themeBtn.textContent = "Gold";
+        }
+
+    }
+
+    localStorage.setItem("theme", theme);
+
+    }
+</script>
+
+</body>
+</html>
