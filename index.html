@@ -1572,6 +1572,7 @@ Hercule
 </footer>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/fix-webm-duration@1.0.6/fix-webm-duration.js"></script>
 <script>
 /* ===========================================================
    Verified GIF Pro
@@ -2923,103 +2924,104 @@ setInterval(()=>{
    FINISH RECORDING
 ========================= */
 
-function createOutput(){
+async function createOutput(){
 
-
-    outputBlob = new Blob(
-
+    const rawBlob = new Blob(
         chunks,
-
         {
-            type:"video/webm"
+            type: "video/webm"
         }
-
     );
 
+    // MediaRecorder WebM files often contain no Duration metadata.
+    // They can play correctly but appear as 0 seconds in gallery/file apps.
+    // Use the real source duration and write it into the WebM metadata.
+    let fixedBlob = rawBlob;
 
+    try{
+        const durationMs =
+            Math.max(
+                1,
+                Math.round(
+                    Number(videoDuration || sourceVideo.duration) * 1000
+                )
+            );
+
+        if(typeof ysFixWebmDuration === "function"){
+            fixedBlob =
+                await ysFixWebmDuration(
+                    rawBlob,
+                    durationMs,
+                    {
+                        logger: false
+                    }
+                );
+        }
+    }
+    catch(error){
+        console.warn(
+            "WebM duration metadata fix failed:",
+            error
+        );
+
+        // Keep the playable original if metadata repair fails.
+        fixedBlob = rawBlob;
+    }
+
+    outputBlob = fixedBlob;
 
     const url =
-
-    URL.createObjectURL(
-        outputBlob
-    );
-
-
+        URL.createObjectURL(
+            outputBlob
+        );
 
     outputVideo.src = url;
 
-
-
     output.style.display =
-    "block";
-
-
+        "block";
 
     downloadBtn.disabled =
-    false;
+        false;
 
-
+    const displayDuration =
+        Number(videoDuration || sourceVideo.duration);
 
     videoInfo.innerHTML =
-
-    "📺 رزولوشن: "
-
-    +
-
-    canvas.width
-
-    +
-
-    " × "
-
-    +
-
-    canvas.height
-
-    +
-
-    "<br>"
-
-    +
-
-    "⏱ مدت: "
-
-    +
-
-    sourceVideo.duration
-    .toFixed(2)
-
-    +
-
-    " ثانیه"
-
-    +
-
-    "<br>"
-
-    +
-
-    "📦 حجم: "
-
-    +
-
-    formatBytes(
-        outputBlob.size
-    );
-
-
+        "📺 رزولوشن: "
+        +
+        canvas.width
+        +
+        " × "
+        +
+        canvas.height
+        +
+        "<br>"
+        +
+        "⏱ مدت: "
+        +
+        (
+            Number.isFinite(displayDuration)
+            ? displayDuration
+            : 0
+        ).toFixed(2)
+        +
+        " ثانیه"
+        +
+        "<br>"
+        +
+        "📦 حجم: "
+        +
+        formatBytes(
+            outputBlob.size
+        );
 
     finishCleanup();
-
-
 
     showToast(
         "گیف آماده شد!"
     );
 
-
 }
-
 
 
 /* =========================
@@ -3517,4 +3519,4 @@ function applyTheme(){
 </script>
 
 </body>
-</html>
+    </html>
